@@ -167,38 +167,6 @@ def seed_database():
         session.commit()
         print("   PT sessions created")
 
-        # ==========================================
-        # BILLING RECORDS
-        # ==========================================
-        b1 = Billing(member_id=m1.member_id, amount=99.99, service_type="Monthly Membership", 
-                    status="Paid", payment_method="Credit Card", due_date=date(2025, 11, 1))
-        b2 = Billing(member_id=m1.member_id, amount=50.00, service_type="PT Session", 
-                    status="Paid", payment_method="Credit Card", due_date=date(2025, 11, 15))
-        b3 = Billing(member_id=m2.member_id, amount=99.99, service_type="Monthly Membership", 
-                    status="Pending", payment_method=None, due_date=date(2025, 12, 1))
-        b4 = Billing(member_id=m3.member_id, amount=149.99, service_type="Quarterly Membership", 
-                    status="Paid", payment_method="Debit Card", due_date=date(2025, 10, 1))
-        
-        session.add_all([b1, b2, b3, b4])
-        session.commit()
-        print("   Billing records created")
-
-        # ==========================================
-        # MAINTENANCE LOGS
-        # ==========================================
-        ml1 = MaintenanceLog(equipment_id=e2.equipment_id, admin_id=a1.admin_id, 
-                            issue_description="Belt replacement needed", status="In Progress",
-                            date_reported=datetime(2025, 11, 20))
-        ml2 = MaintenanceLog(equipment_id=e1.equipment_id, admin_id=a1.admin_id, 
-                            issue_description="Routine maintenance check", status="Completed",
-                            date_reported=datetime(2025, 10, 1), date_resolved=datetime(2025, 10, 1))
-        ml3 = MaintenanceLog(equipment_id=e4.equipment_id, admin_id=a1.admin_id, 
-                            issue_description="Squeaky pedal reported by member", status="Pending",
-                            date_reported=datetime(2025, 11, 25))
-        
-        session.add_all([ml1, ml2, ml3])
-        session.commit()
-        print("     Maintenance logs created")
 
         print("\n" + "="*50)
         print("Successfully seeded all data to the database")
@@ -215,8 +183,8 @@ def seed_database():
         print(f"   • PT Sessions: 3")
         print(f"   • Health Metrics: 9")
         print(f"   • Fitness Goals: 4")
-        print(f"   • Billing Records: 4")
-        print(f"   • Maintenance Logs: 3")
+        print(f"   • Billing Records: 0")
+        print(f"   • Maintenance Logs: 0")
         
     except Exception as e:
         session.rollback()

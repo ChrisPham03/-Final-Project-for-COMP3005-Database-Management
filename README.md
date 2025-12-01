@@ -254,16 +254,16 @@ View available classes → Enter Class ID
 
 ---
 
-## Validation & Error Handling
+## Validation & Error Handling That I Tested and cover in video 
 
 The system validates:
-- ✓ Unique email addresses
-- ✓ Trainer availability before booking
-- ✓ Room capacity (via TRIGGER)
-- ✓ Room conflicts for classes and sessions
-- ✓ Member double-booking prevention
-- ✓ Trainer double-booking prevention
-- ✓ Past class registration prevention
+- Unique email addresses
+- Trainer availability before booking
+- Room capacity (via TRIGGER)
+- Room conflicts for classes and sessions
+- Member double-booking prevention
+- Trainer double-booking prevention
+- Past class registration prevention
 
 ---
 

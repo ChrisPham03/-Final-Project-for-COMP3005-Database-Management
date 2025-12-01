@@ -10,7 +10,7 @@ from models.schema import (
 
 def register_member(first_name, last_name, email, password, dob, gender):
     """
-    User Registration - Creates a new member with unique email.
+    User Registration - Creates a new member with constraint on unique email.
     Returns member_id on success, None on failure.
     """
     session = get_session()
@@ -42,7 +42,7 @@ def register_member(first_name, last_name, email, password, dob, gender):
 
 def update_member_profile(member_id, new_email=None, new_metric=None, new_goal=None):
     """
-    Profile Management - Update personal details, fitness goals, and health metrics.
+    Profile Management - Update personal details|fitness goals|health metrics.
     new_metric format: (type, value, unit)
     new_goal format: (type, target_value, deadline)
     """
@@ -192,6 +192,7 @@ def get_member_dashboard(member_id):
     finally:
         session.close()
 
+"This function has my index implementation for efficient conflict checking using the index defined in schema.py"
 def schedule_pt_session(member_id, trainer_id, room_id, session_date, start_time, end_time):
     """
     PT Session Scheduling - Book or reschedule training with validation.
